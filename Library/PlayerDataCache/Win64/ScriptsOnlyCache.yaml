@@ -7,13 +7,10 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -56,25 +53,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1514}
+      Script: {instanceID: 1532}
     - Class: 114
-      Script: {instanceID: 1820}
+      Script: {instanceID: 1838}
     - Class: 114
-      Script: {instanceID: 2616}
+      Script: {instanceID: 2634}
     - Class: 114
-      Script: {instanceID: 2776}
+      Script: {instanceID: 2794}
     - Class: 114
-      Script: {instanceID: 2822}
+      Script: {instanceID: 2840}
     - Class: 114
-      Script: {instanceID: 2990}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3232}
+      Script: {instanceID: 3250}
     - Class: 114
-      Script: {instanceID: 3344}
+      Script: {instanceID: 3266}
     - Class: 114
-      Script: {instanceID: 22158}
+      Script: {instanceID: 3364}
     - Class: 114
-      Script: {instanceID: 26698}
+      Script: {instanceID: 3570}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -162,31 +159,31 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1514}
+      Script: {instanceID: 1532}
     - Class: 114
-      Script: {instanceID: 1820}
+      Script: {instanceID: 1838}
     - Class: 114
-      Script: {instanceID: 2194}
+      Script: {instanceID: 2212}
     - Class: 114
-      Script: {instanceID: 2616}
+      Script: {instanceID: 2634}
     - Class: 114
-      Script: {instanceID: 2776}
+      Script: {instanceID: 2794}
     - Class: 114
-      Script: {instanceID: 2822}
+      Script: {instanceID: 2840}
     - Class: 114
-      Script: {instanceID: 2990}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3232}
+      Script: {instanceID: 3250}
     - Class: 114
-      Script: {instanceID: 3344}
+      Script: {instanceID: 3266}
     - Class: 114
-      Script: {instanceID: 4662}
+      Script: {instanceID: 3364}
     - Class: 114
-      Script: {instanceID: 5036}
+      Script: {instanceID: 3570}
     - Class: 114
-      Script: {instanceID: 22158}
+      Script: {instanceID: 4684}
     - Class: 114
-      Script: {instanceID: 26698}
+      Script: {instanceID: 5058}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -434,6 +431,12 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
+      Hash: 60b6d4179164eec8359d7a5f54b582e2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
       Hash: 5dea360fb0b147724ac344e6f399c2f3
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -474,6 +477,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 700822ef1e67f46fbf870a1eef898f60
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SwitchScene
   - hash:
       serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
@@ -720,18 +729,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 700822ef1e67f46fbf870a1eef898f60
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SwitchScene
-  - hash:
-      serializedVersion: 2
-      Hash: 60b6d4179164eec8359d7a5f54b582e2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/StartScreen.unity
