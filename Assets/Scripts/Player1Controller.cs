@@ -7,10 +7,14 @@ public class Player1Controller : MonoBehaviour
     float horizontal;
     Rigidbody2D playerRb;
     Vector2 position;
-    public GameObject textBox;
     private float speed = 10;
     public bool playerSwitch = false;
     private bool isFacingRight = true;
+    public bool inTextMode = false;
+    public double isOnBoundaryLeftBound = -15;
+    public double isOnBoundaryRightBound = 6;
+    public double isReadyToSwitchLeftBound = 4;
+    public double isReadyToSwitchRightBound = 7;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +30,13 @@ public class Player1Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(isOnBoundary() == false) {
+        inTextMode = GameObject.Find("Text Displayer").GetComponent<TextDisplayer>().inTextMode;
+        if(IsOnBoundary() == false && inTextMode == false) {
             position = playerRb.position;
             position.x = position.x + speed * horizontal * Time.deltaTime;
             playerRb.MovePosition(position);
         }
-        if(isReadyToSwitch() == true && Input.GetKey(KeyCode.F)){
+        if(IsReadyToSwitch() == true && Input.GetKey(KeyCode.F)){
             playerSwitch = true;
         }
 
@@ -42,28 +47,20 @@ public class Player1Controller : MonoBehaviour
         }
     }
 
-    bool isReadyToSwitch(){
-        if(position.x >= 4 && position.x <= 7){
+    bool IsReadyToSwitch(){
+        if(position.x >= isReadyToSwitchLeftBound && position.x <= isReadyToSwitchRightBound){
             return true;
         }
         return false;
     }
 
-    bool isNextToText()
+    bool IsOnBoundary()
     {
-        if(position.x > 3){
-            return true;
-        }
-        return false;
-    }
-
-    bool isOnBoundary()
-    {
-        if(position.x <= -12 && horizontal < 0){
+        if(position.x <= isOnBoundaryLeftBound && horizontal < 0){
             return true;
         }
 
-        if(position.x >= 6 && horizontal > 0){
+        if(position.x >= isOnBoundaryRightBound && horizontal > 0){
             return true;
         }
         return false;

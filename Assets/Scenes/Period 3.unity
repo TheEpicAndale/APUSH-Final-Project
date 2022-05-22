@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa715dc77ddebc548998f0fee74d2551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  periodNameOfSwitchScene: StartScreen
+  nameOfSwitchScene: StartScreen
 --- !u!114 &1003336851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +471,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreen: {fileID: 0}
-  isGameActive: 0
   nameOfSwitchScene: 
 --- !u!4 &1359445780
 Transform:

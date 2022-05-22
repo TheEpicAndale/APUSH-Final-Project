@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa715dc77ddebc548998f0fee74d2551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  periodNameOfSwitchScene: Period 1
+  nameOfSwitchScene: Period 1
 --- !u!1 &1007637830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa715dc77ddebc548998f0fee74d2551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  periodNameOfSwitchScene: Period 2
+  nameOfSwitchScene: Period 2
 --- !u!1 &1243099153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1062,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreen: {fileID: 1007637830}
-  isGameActive: 0
   nameOfSwitchScene: 
 --- !u!4 &1243099155
 Transform:
@@ -1212,7 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa715dc77ddebc548998f0fee74d2551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  periodNameOfSwitchScene: Period 3
+  nameOfSwitchScene: Period 3
 --- !u!1 &1566341190
 GameObject:
   m_ObjectHideFlags: 0

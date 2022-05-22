@@ -7,7 +7,7 @@ public class SwitchScene : MonoBehaviour
 {
     private Button button;
     private GameManager gameManager;
-    public string periodNameOfSwitchScene;
+    public string nameOfSwitchScene;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class SwitchScene : MonoBehaviour
 
     void StartGame()
     {
-        gameManager.nameOfSwitchScene = periodNameOfSwitchScene;
+        gameManager.nameOfSwitchScene = nameOfSwitchScene;
         gameManager.StartGame();
     }
 }

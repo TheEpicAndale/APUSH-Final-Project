@@ -13,6 +13,9 @@ public class Player2Controller : MonoBehaviour
     public bool playerSwitch = false;
     public bool onPlayer = false;
     private bool isFacingRight = true;
+    public bool inTextMode = false;
+    public double isOnBoundaryLeftBound = 30;
+    public double isOnBoundaryRightBound = 57;
 
     // Start is called before the first frame update
     void Start()
@@ -23,21 +26,22 @@ public class Player2Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
+        if(onPlayer == true)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+        }
     }
 
     void FixedUpdate()
     {
-        if(isOnBoundary() == false && onPlayer == true) {
+        inTextMode = GameObject.Find("Text Displayer").GetComponent<TextDisplayer>().inTextMode;
+        if(IsOnBoundary() == false && onPlayer == true) {
             position = playerRb.position;
             position.x = position.x + speed * horizontal * Time.deltaTime;
             playerRb.MovePosition(position);
         }
-        if(isReadyToSwitch() == true && Input.GetKey(KeyCode.F)){
-            playerSwitch = true;
-        }
 
-        if(GameObject.Find("Game Manager").GetComponent<GameManager>().playerNum == 2){
+        if(GameObject.Find("Game Manager").GetComponent<PlayerSwitcher>().playerNum == 2){
             onPlayer = true;
         } else {
             onPlayer = false;
@@ -50,28 +54,13 @@ public class Player2Controller : MonoBehaviour
         }
     }
 
-    bool isReadyToSwitch(){
-        if(position.x >= 7 && position.x <= 11){
-            return true;
-        }
-        return false;
-    }
-
-    bool isNextToText()
+    bool IsOnBoundary()
     {
-        if(position.x > 3){
-            return true;
-        }
-        return false;
-    }
-
-    bool isOnBoundary()
-    {
-        if(position.x <= 30 && horizontal < 0){
+        if(position.x <= isOnBoundaryLeftBound && horizontal < 0){
             return true;
         }
 
-        if(position.x >= 57 && horizontal > 0){
+        if(position.x >= isOnBoundaryRightBound && horizontal > 0){
             return true;
         }
         return false;

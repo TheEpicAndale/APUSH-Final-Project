@@ -10,6 +10,13 @@ public class SteamboatController : MonoBehaviour
     private float speed = 4;
     public bool playerSwitch = false;
     public bool onPlayer = false;
+    public bool canPassHalfway = true;
+    public double canPassHalfwayLeftBound = 18.5;
+    public double canPassHalfwayRightBound = 19.5;
+    public bool isPassHalfway = false;
+    public double isReadyToSwitchLeftBound = 23;
+    public double isReadyToSwitchRightBound = 25;
+    public double isOnBoundaryBound = 24;
 
     // Start is called before the first frame update
     void Start()
@@ -24,42 +31,54 @@ public class SteamboatController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(isOnBoundary() == false && onPlayer == true) {
+        if(IsOnBoundary() == false && onPlayer == true && canPassHalfway == true) {
             position = playerRb.position;
             position.x = position.x + speed * Time.deltaTime;
             playerRb.MovePosition(position);
         }
-        if(isReadyToSwitch() == true && Input.GetKey(KeyCode.F)){
+        CanPassHalfway();
+        if(IsReadyToSwitch() == true && Input.GetKey(KeyCode.F)){
             playerSwitch = true;
         }
 
-        if(GameObject.Find("Game Manager").GetComponent<GameManager>().playerNum == 1){
+        if(GameObject.Find("Game Manager").GetComponent<PlayerSwitcher>().playerNum == 1){
             onPlayer = true;
         } else {
             onPlayer = false;
         }
     }
 
-    bool isReadyToSwitch(){
-        if(position.x >= 24 && position.x <= 27){
+    bool IsReadyToSwitch(){
+        if(position.x >= isReadyToSwitchLeftBound && position.x <= isReadyToSwitchRightBound){
             return true;
         }
         return false;
     }
 
-    bool isNextToText()
+    bool IsOnBoundary()
     {
-        if(position.x > 3){
+        if(position.x >= isOnBoundaryBound){
             return true;
         }
-        return false;
+        else
+        {
+            return false;
+        }
     }
-
-    bool isOnBoundary()
+    
+    void CanPassHalfway()
     {
-        if(position.x >= 26.5){
-            return true;
+        if(position.x > canPassHalfwayLeftBound && position.x < canPassHalfwayLeftBound + 1 && isPassHalfway == false)
+        {
+            if(Input.GetKey(KeyCode.F))
+            {
+                canPassHalfway = true;
+                isPassHalfway = true;
+            }
+            else
+            {
+                canPassHalfway = false;
+            }
         }
-        return false;
     }
 }
